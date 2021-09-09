@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+import br.com.aulas_android.MyApplication
 import br.com.aulas_android.model.Address
 import br.com.aulas_android.model.EventWrapper
 import br.com.aulas_android.model.MainRepository
@@ -22,6 +23,7 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
 
                 if (response.isSuccessful) {
                     address = response.body()
+                    MyApplication.database!!.addressDao().insertAddress(response.body()!!)
                 } else {
                     withContext(Dispatchers.Main) {
                         requestError.value = EventWrapper("Erro ao atualizar os dados")

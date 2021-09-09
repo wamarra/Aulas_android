@@ -1,10 +1,8 @@
 package br.com.aulas_android.model
 
-import android.net.wifi.hotspot2.pps.Credential
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GoogleAuthCredential
 import com.google.firebase.firestore.FirebaseFirestore
 
 class AuthRepository {

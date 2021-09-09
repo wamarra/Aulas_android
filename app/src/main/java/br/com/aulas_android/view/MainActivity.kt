@@ -17,7 +17,7 @@ import br.com.aulas_android.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     companion object {
-        val USER_EXTRA = "user"
+        const val USER_EXTRA = "user"
     }
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainViewModel
@@ -26,12 +26,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE)
-        val name = sharedPreferences.getString("user", "Outro")
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.user = User(uid = "1", name = name) // intent.getSerializableExtra(USER_EXTRA) as User
+        intent.getSerializableExtra(USER_EXTRA) as User
 
         viewModel = ViewModelProvider(this, MainViewModel.MainViewModelFactory(MainRepository()))
             .get(MainViewModel::class.java)

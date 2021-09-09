@@ -22,14 +22,8 @@ class SplashActivity : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra(MainActivity.USER_EXTRA, user)
 
-                val sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE)
-                with(sharedPreferences.edit()) {
-                    putString("user", "Teste Shared Pref")
-                    commit()
-                }
-
                 startActivity(intent)
-                //finish()
+                finish()
             } else {
                 startActivity(Intent(this, AuthActivity::class.java))
                 finish()
