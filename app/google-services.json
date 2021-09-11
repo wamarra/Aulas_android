@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "487645691279",
+    "project_id": "aulas-android-df14a",
+    "storage_bucket": "aulas-android-df14a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487645691279:android:664b0583a59acec1c99ffa",
+        "android_client_info": {
+          "package_name": "br.com.aulas_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487645691279-umt089nfccb6pshvqkkno9q0mdte4vjg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.aulas_android",
+            "certificate_hash": "a1fa333851eba51d7a8c27ca7e1b79f5e33002cb"
+          }
+        },
+        {
+          "client_id": "487645691279-5mgbe7nluk8tmbjeeqlc6e9q31tjcrhi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjNF-vp7BwNOlWhyZcWQn65NhxnS60PYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487645691279-5mgbe7nluk8tmbjeeqlc6e9q31tjcrhi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

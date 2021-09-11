@@ -2,7 +2,6 @@ package br.com.aulas_android.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -10,7 +9,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import br.com.aulas_android.R
 import br.com.aulas_android.databinding.ActivityMainBinding
-import br.com.aulas_android.model.Address
 import br.com.aulas_android.model.MainRepository
 import br.com.aulas_android.model.User
 import br.com.aulas_android.viewmodel.MainViewModel
@@ -33,16 +31,6 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, MainViewModel.MainViewModelFactory(MainRepository()))
             .get(MainViewModel::class.java)
 
-        viewModel.requestError.observe(this) { wrapper ->
-            wrapper.getContentIfNotHandled()?.let { errorMessage ->
-                Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-
         var button = findViewById<Button>(R.id.btn_get_address_by_cep)
 
         button.setOnClickListener{
@@ -51,6 +39,12 @@ class MainActivity : AppCompatActivity() {
             viewModel.getAddressByCep(cep.text.toString())
 
             binding.address = viewModel.address
+        }
+
+        viewModel.requestError.observe(this) { wrapper ->
+            wrapper.getContentIfNotHandled()?.let { errorMessage ->
+                Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
